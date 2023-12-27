@@ -1,13 +1,17 @@
 {
   "name": "langserve",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Langserve for Langchain.js",
   "main": "dist/index.mjs",
   "type": "module",
+  "author": "John Henry",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnhenry/langserve.git"
+  },
   "scripts": {
     "build": "esbuild ./src/mod.ts --format=esm --bundle --platform=node --packages=external --outfile=dist/index.mjs"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",

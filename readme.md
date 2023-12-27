@@ -70,7 +70,7 @@ Javascript SDK
 import { SystemMessage, HumanMessage } from "langchain/schema";
 import { ChatPromptTemplate } from "langchain/prompts";
 import { RunnableMap } from "langchain/schema/runnable";
-import { RemoteRunnable } from "langserve";
+import { RemoteRunnable } from "langchain/runnables/remote";
 
 const openai = new RemoteRunnable("http://localhost:8000/openai/");
 const anthropic = new RemoteRunnable("http://localhost:8000/anthropic/");
