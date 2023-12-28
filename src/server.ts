@@ -6,11 +6,11 @@ import type { InputsMapInput } from "./types.d";
 const add_express_routes = (
   app: any,
   chain: any,
-  options: { inputs: InputsMapInput[]; path: string } = { inputs: [], path: "" }
+  options: { path: string } = { path: "" }
 ) => {
   const { path } = options;
   // Playground
-  app.get(`${path}/playground`, playground_route(chain, options));
+  app.get(`${path}/playground`, playground_route(chain));
   app.post(
     `${path}/playground`,
     bodyParser.urlencoded({
@@ -18,7 +18,7 @@ const add_express_routes = (
       extended: true,
     })
   );
-  app.post(`${path}/playground`, playground_route(chain, options));
+  app.post(`${path}/playground`, playground_route(chain));
   // Invoke
   app.post(`${path}/invoke`, bodyParser.json());
   app.post(`${path}/invoke`, invoke_route(chain));

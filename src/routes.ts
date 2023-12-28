@@ -57,12 +57,9 @@ const html = (form: string = "") => {
 </html>`;
 };
 
-const playground_route = (
-  chain: any,
-  options: { inputs: (string | InputsMapInput)[] } = { inputs: [] }
-) => {
+const playground_route = (chain: any) => {
+  const inputs = chain.first.inputVariables;
   return async (req: Request, res: Response) => {
-    const { inputs } = options;
     const result =
       req.method === "POST"
         ? `<output>${await chain.invoke(req.body)}</output>`

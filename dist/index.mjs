@@ -62,9 +62,9 @@ var html = (form = "") => {
   </body>
 </html>`;
 };
-var playground_route = (chain, options = { inputs: [] }) => {
+var playground_route = (chain) => {
+  const inputs = chain.first.inputVariables;
   return async (req, res) => {
-    const { inputs } = options;
     const result = req.method === "POST" ? `<output>${await chain.invoke(req.body)}</output>` : null;
     res.set("Content-Type", "text/html");
     res.send(
@@ -108,9 +108,9 @@ var invoke_route = (chain) => {
 };
 
 // src/server.ts
-var add_express_routes = (app, chain, options = { inputs: [], path: "" }) => {
+var add_express_routes = (app, chain, options = { path: "" }) => {
   const { path } = options;
-  app.get(`${path}/playground`, playground_route(chain, options));
+  app.get(`${path}/playground`, playground_route(chain));
   app.post(
     `${path}/playground`,
     bodyParser.urlencoded({
@@ -118,7 +118,7 @@ var add_express_routes = (app, chain, options = { inputs: [], path: "" }) => {
       extended: true
     })
   );
-  app.post(`${path}/playground`, playground_route(chain, options));
+  app.post(`${path}/playground`, playground_route(chain));
   app.post(`${path}/invoke`, bodyParser.json());
   app.post(`${path}/invoke`, invoke_route(chain));
   return app;

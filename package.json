@@ -1,6 +1,6 @@
 {
   "name": "langserve",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Langserve for Langchain.js",
   "main": "dist/index.mjs",
   "type": "module",
