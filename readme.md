@@ -57,7 +57,7 @@ add_routes(app, ChatAnthropic(), { path: "/anthropic" });
 const model = ChatAnthropic();
 const prompt = ChatPromptTemplate.from_template("tell me a joke about {topic}");
 
-add_routes(app, prompt.pipe(model), { path: "/joke", inputs: ["topic"] });
+add_routes(app, prompt.pipe(model), { path: "/joke" });
 
 app.listen(8000);
 ```
