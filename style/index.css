@@ -1,39 +1,56 @@
 :root {
+  /* colors */
   --background-color: #0c111d;
   --background-color-secondary: #131317;
-  /*rgb(51, 65, 85)*/
-  --font-color: #ffffff;
-  --border-color: #334155;
-  /* --border-color: #4499f733; */
-  --lowlight: #94a3b8;
+  --background-tertiary: #334155;
 
+  --font-color: #ffffff;
+  --font-color_lowlight: #94a3b8;
+  --border-color: #334155;
+  --border-color_outline: #4499f7;
+  /** colors: buttons */
   --button-background-color: inherit;
   --button-background-color_hover: #141c2b;
   --button-background-color_active: #1e293b;
-
   --button-background-color_submit: #3b82f6;
   --button-background-color_submit_hover: #2463eb;
   --button-background-color_submit_active: #1c4ed8;
-
-  --size_1_4rem: calc(var(--size_rem) * 0.25);
-  --size_3_8rem: calc(var(--size_rem) * 0.375);
-  --size_1_2rem: calc(var(--size_rem) * 0.5);
-  --size_3_4rem: calc(var(--size_rem) * 0.75);
-  --size_7_8rem: calc(var(--size_rem) * 0.875);
-  --size_rem: 1rem;
-  --size_9_8rem: calc(var(--size_rem) * 1.125);
-  --size_5_4rem: calc(var(--size_rem) * 1.25);
-  --size_3_2rem: calc(var(--size_rem) * 1.5);
-
-  --size_1_4px: calc(var(--size_px) * 0.25);
-  --size_3_8px: calc(var(--size_px) * 0.375);
-  --size_1_2px: calc(var(--size_px) * 0.5);
-  --size_3_4px: calc(var(--size_px) * 0.75);
-  --size_7_8px: calc(var(--size_px) * 0.875);
+  /* sizes */
+  --size_min_px: 1px;
+  /** sizes:absolute */
   --size_px: 16px;
-  --size_9_8px: calc(var(--size_px) * 1.125);
-  --size_5_4px: calc(var(--size_px) * 1.25);
-  --size_3_2px: calc(var(--size_px) * 1.5);
+  --size_125px: calc(var(--size_px) * 0.125);
+  --size_250px: calc(var(--size_px) * 0.25);
+  --size_375px: calc(var(--size_px) * 0.375);
+  --size_500px: calc(var(--size_px) * 0.5);
+  --size_625px: calc(var(--size_px) * 0.625);
+  --size_750px: calc(var(--size_px) * 0.75);
+  --size_875px: calc(var(--size_px) * 0.875);
+  --size_1125px: calc(var(--size_px) * 1.125);
+  --size_1250px: calc(var(--size_px) * 1.25);
+  --size_1375px: calc(var(--size_px) * 1.375);
+  --size_1500px: calc(var(--size_px) * 1.5);
+  --size_2000px: calc(var(--size_px) * 2);
+  --size_3000px: calc(var(--size_px) * 3);
+  --size_4000px: calc(var(--size_px) * 4);
+  /** sizes:relative */
+  --size_rem: 1rem;
+  --size_125rem: calc(var(--size_rem) * 0.125);
+  --size_250rem: calc(var(--size_rem) * 0.25);
+  --size_375rem: calc(var(--size_rem) * 0.375);
+  --size_500rem: calc(var(--size_rem) * 0.5);
+  --size_625rem: calc(var(--size_rem) * 0.625);
+  --size_750rem: calc(var(--size_rem) * 0.75);
+  --size_875rem: calc(var(--size_rem) * 0.875);
+  --size_1125rem: calc(var(--size_rem) * 1.125);
+  --size_1250rem: calc(var(--size_rem) * 1.25);
+  --size_1375rem: calc(var(--size_rem) * 1.375);
+  --size_1500rem: calc(var(--size_rem) * 1.5);
+  --size_2000rem: calc(var(--size_rem) * 2);
+  --size_3000rem: calc(var(--size_rem) * 3);
+  --size_4000rem: calc(var(--size_rem) * 4);
+  /** sizes:application */
+  --application-width: calc(50 * var(--size_rem));
 }
 *,
 *::before,
@@ -41,105 +58,104 @@
   box-sizing: border-box;
 }
 
-html {
-  background-color: var(--background-color);
-  color: var(--font-color);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
-  font-size: var(--size_px);
-  width: 100vw;
-  height: 100vh;
-}
 h1 {
-  font-size: var(--size_3_2rem);
+  font-size: var(--size_1500rem);
   .first-word {
     font-weight: bold;
   }
 }
 h2 {
-  font-size: var(--size_5_4rem);
+  font-size: var(--size_1250rem);
   font-weight: 600;
 }
 h3 {
   font-weight: bold;
 }
 
+html {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: var(--size_px);
+  width: 100dvw;
+  height: 100dvh;
+}
+
 body {
   width: 100%;
   height: 100%;
-  font-size: 1rem;
+  font-size: var(--size_rem);
   > main {
     width: 100%;
     height: 100%;
     > form {
-      padding-top: var(--size_3_2rem);
-      padding-left: var(--size_rem);
-      padding-right: var(--size_rem);
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 800px;
+      max-width: var(--application-width);
       display: flex;
       flex-direction: column;
       align-items: start;
       justify-content: center;
-      gap: var(--size_3_2rem);
+      gap: var(--size_1500rem);
+      padding-top: var(--size_1500rem);
+      padding-left: var(--size_rem);
+      padding-right: var(--size_rem);
+      margin-left: auto;
+      margin-right: auto;
       > div {
-        background-color: var(--background-color-secondary);
-        border-radius: 16px;
-        border: 1px solid var(--border-color);
         width: 100%;
-        padding: var(--size_rem);
         display: flex;
         flex-direction: column;
-        width: 100%;
         justify-content: space-between;
         gap: var(--size_rem);
+        background-color: var(--background-color-secondary);
+        border-radius: var(--size_px);
+        border: var(--size_min_px) solid var(--border-color);
+        padding: var(--size_rem);
         > header {
-          display: flex;
           width: 100%;
+          display: flex;
           justify-content: space-between;
           gap: var(--size_rem);
           .reset {
-            font-size: var(--size_7_8rem);
-            color: var(--lowlight);
+            font-size: var(--size_875rem);
+            color: var(--font-color_lowlight);
             cursor: pointer;
             display: inline-block;
-            border-radius: var(--size_3_8rem);
-            padding: var(--size_1_4rem);
+            border-radius: var(--size_375rem);
+            padding: var(--size_250rem);
             &:hover {
-              background-color: hsl(215.3 25% 26.7%);
+              background-color: var(--background-tertiary);
             }
           }
         }
         label {
-          font-size: var(--size_3_4rem);
-          border: 1px solid var(--border-color);
-          outline-color: var(--border-color);
-          background-color: inherit;
           display: flex;
           flex-direction: column;
           align-items: start;
           justify-content: center;
-          gap: var(--size_1_4rem);
-          border-radius: var(--size_1_2rem);
-          border-width: 1px;
-          padding: var(--size_3_4rem);
-
+          gap: var(--size_250rem);
+          font-size: var(--size_750rem);
+          border: var(--size_min_px) solid var(--border-color);
+          outline: var(--size_min_px) solid var(--border-color);
+          background-color: inherit;
+          border-radius: var(--size_500rem);
+          border-width: var(--size_min_px);
+          padding: var(--size_750rem);
           &:not(input),
           &:not(textarea) {
-            color: var(--lowlight);
+            color: var(--font-color_lowlight);
             text-transform: uppercase;
           }
           &:focus-within {
-            outline: 1px solid #4499f7;
+            outline-color: var(--border-color_outline);
           }
           textarea,
           input {
             color: var(--font-color);
             background-color: inherit;
             border: none;
-            font-size: var(--size_9_8rem);
+            font-size: var(--size_1125rem);
             width: 100%;
             &:focus {
               outline: none;
@@ -151,21 +167,21 @@ body {
         }
       }
       > footer {
-        display: flex;
         width: 100%;
+        display: flex;
         justify-content: space-between;
-        gap: 1rem;
+        gap: var(--size_rem);
         button {
-          border: 1px solid var(--border-color);
-          background-color: var(--button-background-color);
+          flex: 1 1 auto;
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 1rem;
-          flex: 1 1 auto;
+          gap: var(--size_rem);
+          border: var(--size_min_px) solid var(--border-color);
+          background-color: var(--button-background-color);
           color: inherit;
-          border-radius: 9999px;
-          padding: var(--size_3_4px) var(--size_px);
+          border-radius: 100px;
+          padding: var(--size_750px) var(--size_px);
           font-size: 100%;
           cursor: pointer;
           &:hover {
